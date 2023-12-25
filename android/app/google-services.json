@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "655186614623",
+    "project_id": "ultimate-invoices",
+    "storage_bucket": "ultimate-invoices.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655186614623:android:eeea91ca66b9f1348bbeea",
+        "android_client_info": {
+          "package_name": "com.example.ultimate_invoicer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAf5tmIIfPwxskMUScor8fmHwAWJ6fWg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
