@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:ultimate_invoicer/constants.dart';
+import 'package:ultimate_invoicer/theme/colors.dart';
 
-class CreditInfoWidget extends StatelessWidget {
+class CreditInfoWidget extends StatefulWidget {
   CreditInfoWidget({super.key});
+
+  @override
+  State<CreditInfoWidget> createState() => _CreditInfoWidgetState();
+}
+
+class _CreditInfoWidgetState extends State<CreditInfoWidget> {
+  final radioButton = [
+    'Receive',
+    'Pay',
+  ];
   final String selectedOption = 'Option 1';
+
   final List<String> options = ['Option 1', 'Option 2', 'Option 3'];
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -53,29 +67,8 @@ class CreditInfoWidget extends StatelessWidget {
                             onSaved: (newValue) {},
                             style: const TextStyle(
                                 fontSize: 16.0, color: Colors.black),
-                            decoration: InputDecoration(
+                            decoration: kGreyTextField.copyWith(
                               labelText: '₹ 0.0',
-                              labelStyle: TextStyle(
-                                  fontSize: 13.0, color: Colors.grey[400]),
-                              floatingLabelBehavior:
-                                  FloatingLabelBehavior.never,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: const BorderSide(
-                                    color: Colors.grey, width: 1.0),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: const BorderSide(
-                                    color: Colors.grey, width: 1.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.grey[100],
-                              contentPadding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
                             ),
                           ),
                         ],
@@ -90,37 +83,40 @@ class CreditInfoWidget extends StatelessWidget {
                         children: [
                           const SizedBox(height: 8),
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              // Expanded(
-                              //   child: Obx(
-                              //     () => CustomRadioButton(
-                              //       value: "receive",
-                              //       label: "Receive",
-                              //       onChanged: controller
-                              //           .updateCreditInfoSelectedValue,
-                              //       isSelected: controller
-                              //               .creditInfoSelectedValue.value ==
-                              //           "receive",
-                              //     ),
-                              //   ),
-                              // ),
-                              // const SizedBox(width: 5),
-                              // Expanded(
-                              //   child: Obx(
-                              //     () => CustomRadioButton(
-                              //       value: "pay",
-                              //       label: "Pay",
-                              //       onChanged: controller
-                              //           .updateCreditInfoSelectedValue,
-                              //       isSelected: controller
-                              //               .creditInfoSelectedValue.value ==
-                              //           "pay",
-                              //     ),
-                              //   ),
-                              // ),
-                            ],
+                            children: List.generate(
+                              2,
+                              (index) => GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    currentIndex = index;
+                                  });
+                                },
+                                child: AnimatedContainer(
+                                  curve: Curves.easeInOut,
+                                  duration: const Duration(microseconds: 300),
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 12),
+                                  decoration: BoxDecoration(
+                                    color: currentIndex == index
+                                        ? AppColor.primary
+                                        : AppColor.secondary,
+                                    borderRadius: BorderRadius.circular(28),
+                                  ),
+                                  child: Text(
+                                    radioButton[index],
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium!
+                                        .copyWith(
+                                            color: currentIndex == index
+                                                ? AppColor.secondary
+                                                : AppColor.primary),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -191,29 +187,9 @@ class CreditInfoWidget extends StatelessWidget {
                       onChanged: (newValue) {},
                       onSaved: (newValue) {},
                       style:
-                          const TextStyle(fontSize: 16.0, color: Colors.black),
-                      decoration: InputDecoration(
-                        labelText: '₹ 500.0',
-                        labelStyle:
-                            TextStyle(fontSize: 13.0, color: Colors.grey[400]),
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                          const TextStyle(fontSize: 16.0, color: AppColor.text),
+                      decoration: kGreyTextField.copyWith(
+                        labelText: '₹ 0.0',
                       ),
                     ),
                   ],

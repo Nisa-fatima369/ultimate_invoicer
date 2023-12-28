@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ultimate_invoicer/constants.dart';
 
 class BusinessInfoWidget extends StatelessWidget {
   const BusinessInfoWidget({super.key});
@@ -34,27 +35,8 @@ class BusinessInfoWidget extends StatelessWidget {
                       onChanged: (newValue) {},
                       onSaved: (newValue) {},
                       style: const TextStyle(fontSize: 16.0, color: Colors.black),
-                      decoration: InputDecoration(
+                      decoration: kGreyTextField.copyWith(
                         labelText: 'Ex: 29GGGGG1314R9Z6',
-                        labelStyle:
-                            TextStyle(fontSize: 13.0, color: Colors.grey[400]),
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),
                       ),
                     ),
                   ],
@@ -83,27 +65,8 @@ class BusinessInfoWidget extends StatelessWidget {
                       onChanged: (newValue) {},
                       onSaved: (newValue) {},
                       style: const TextStyle(fontSize: 16.0, color: Colors.black),
-                      decoration: InputDecoration(
+                      decoration: kGreyTextField.copyWith(
                         labelText: 'Ex: ABCTY1234D',
-                        labelStyle:
-                            TextStyle(fontSize: 13.0, color: Colors.grey[400]),
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),
                       ),
                     ),
                   ],

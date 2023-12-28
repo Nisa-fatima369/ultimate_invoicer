@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ultimate_invoicer/constants.dart';
 import 'package:ultimate_invoicer/screens/parties/party_create/business_info.dart';
 import 'package:ultimate_invoicer/screens/parties/party_create/credit_info.dart';
 import 'package:ultimate_invoicer/screens/parties/party_create/other_details.dart';
@@ -57,28 +58,8 @@ class _PartyCreateState extends State<PartyCreate> {
                       onSaved: (newValue) {},
                       style:
                           const TextStyle(fontSize: 16.0, color: Colors.black),
-                      decoration: InputDecoration(
-                        labelText: 'Ex: Rahul Tomar',
-                        labelStyle:
-                            TextStyle(fontSize: 13.0, color: Colors.grey[400]),
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[100],
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                      decoration: kGreyTextField.copyWith(
+                        labelText: 'Rahul Tomar',
                       ),
                     ),
                   ],
@@ -123,29 +104,8 @@ class _PartyCreateState extends State<PartyCreate> {
                             onSaved: (newValue) {},
                             style: const TextStyle(
                                 fontSize: 16.0, color: Colors.black),
-                            decoration: InputDecoration(
+                            decoration: kGreyTextField.copyWith(
                               labelText: 'Ex: 124567890',
-                              labelStyle: TextStyle(
-                                  fontSize: 13.0, color: Colors.grey[400]),
-                              floatingLabelBehavior:
-                                  FloatingLabelBehavior.never,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: const BorderSide(
-                                    color: Colors.grey, width: 1.0),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: const BorderSide(
-                                    color: Colors.grey, width: 1.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.grey[100],
-                              contentPadding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
                             ),
                           ),
                         ],

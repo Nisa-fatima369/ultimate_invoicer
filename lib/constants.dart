@@ -85,6 +85,26 @@ final kTextField = InputDecoration(
 //   filled: true,
 // );
 
+final kGreyTextField = InputDecoration(
+  labelText: ' ',
+  labelStyle: TextStyle(fontSize: 13.0, color: Colors.grey[400]),
+  floatingLabelBehavior: FloatingLabelBehavior.never,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8.0),
+    borderSide: const BorderSide(color: Colors.grey, width: 1.0),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8.0),
+    borderSide: const BorderSide(color: Colors.grey, width: 1.0),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8.0),
+  ),
+  filled: true,
+  fillColor: Colors.grey[100],
+  contentPadding: const EdgeInsets.symmetric(horizontal: 10.0),
+);
+
 const y5 = SizedBox(height: 5);
 const y10 = SizedBox(height: 10);
 const y15 = SizedBox(height: 15);
